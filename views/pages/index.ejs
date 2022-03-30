@@ -1,0 +1,25 @@
+<%- include('../partials/htmltopbody.ejs') %>
+
+    <%- include('../partials/nav.ejs') %>
+
+    <h2><%= title %></h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus corporis provident architecto aut tenetur, unde suscipit vel expedita iusto doloremque!</p>
+    <%= new Date().toString() %>
+
+    <% if(post.published) { %>
+        <h2><%= post.title %></h2>
+    <% }else { %>
+        <h2>please add publish correctly</h2>
+    <% } %>
+
+    <% if(data.length >0){ %>
+        <ul>
+            <% for(let singledata of data ){ %>
+                <h1><%= singledata.name %></h1>
+            <% }%>
+        </ul>
+    <% } else { %>
+        <h2>data not found</h2>
+    <% } %>
+    
+<%- include('../partials/htmlbottomdoc.ejs') %>
